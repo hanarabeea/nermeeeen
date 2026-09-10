@@ -496,12 +496,12 @@ export const OpeningOverlay = () => {
           <section className="px-6 pb-4">
             <div className="relative h-[340px]">
               <img
-                src="/hero-wallpaper.jpg"
+                src="/couple-1.jpg"
                 alt=""
                 className="absolute left-0 top-0 z-[40] h-[230px] w-[165px] rounded-2xl object-cover shadow-[0_18px_40px_-20px_rgba(107,15,31,0.5)]"
               />
               <img
-                src="/closing-photo.jpg"
+                src="/couple-2.jpg"
                 alt=""
                 className="absolute right-0 top-[60px] z-[40] h-[230px] w-[165px] rounded-2xl object-cover shadow-[0_18px_40px_-20px_rgba(107,15,31,0.5)]"
               />
@@ -802,7 +802,7 @@ export const OpeningOverlay = () => {
           {/* Closing */}
           <section className="px-6 pb-16 text-center">
             <img
-              src="/closing-photo.jpg"
+              src="/couple-3.jpg"
               alt=""
               className="relative z-[40] h-[330px] w-full rounded-2xl object-cover shadow-[0_20px_45px_-24px_rgba(107,15,31,0.8)]"
             />
