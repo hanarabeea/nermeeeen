@@ -196,7 +196,7 @@ const RibbonLine = () => {
 };
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
-  <div className="text-[11px] uppercase tracking-[0.42em] text-[#A39B84] font-newfonts font-thin">
+  <div className="text-[11px] uppercase tracking-[0.42em] text-[#6B6249] font-newfonts font-thin">
     {children}
   </div>
 );
@@ -415,7 +415,7 @@ export const OpeningOverlay = () => {
 
   const fieldClass =
     "w-full px-4 py-3 rounded-xl border border-[#7E8B52]/20 bg-[#F7F1E3]/70 text-[#4F4A3A] font-newfonts font-thin text-[17px] focus:outline-none focus:ring-2 focus:ring-[#7E8B52]/25";
-  const labelClass = "block text-[13px] uppercase tracking-[0.2em] text-[#A39B84] mb-2 font-newfonts font-thin";
+  const labelClass = "block text-[13px] uppercase tracking-[0.2em] text-[#6B6249] mb-2 font-newfonts font-thin";
 
   return (
     <div lang={language} className={`bg-[#EDE3D1] ${language === "ar" ? "lang-ar" : ""}`}>
@@ -437,13 +437,13 @@ export const OpeningOverlay = () => {
           }`}
         >
           <Heart className="mb-6 h-11 w-11 animate-heartbeat text-[#B9CC85] stroke-[#EDE3D1] stroke-[0.9]" />
-          <div className="text-[12px] uppercase leading-[2] tracking-[0.35em] text-[#E4DCC4] font-newfonts font-thin">
+          <div className="text-[12px] uppercase leading-[2] tracking-[0.35em] text-[#F7F1E3] font-newfonts font-thin">
             {t("invitationFrom")}
           </div>
           <div className="mt-3 text-[54px] leading-[1.1] text-[#F7F1E3] font-webgency">
             {t("brideName")} <span className="text-[42px]">&amp;</span> {t("groomName")}
           </div>
-          <div className="mt-10 text-[13px] uppercase tracking-[0.3em] text-[#E4DCC4]/70 font-newfonts font-thin animate-pulse">
+          <div className="mt-10 text-[13px] uppercase tracking-[0.3em] text-[#F7F1E3] font-newfonts font-thin">
             {t("tapToOpen")}
           </div>
         </div>
@@ -476,15 +476,15 @@ export const OpeningOverlay = () => {
         <div className="relative">
           {/* Hero */}
           <section className="flex min-h-[100svh] flex-col items-center justify-center px-8 text-center">
-            <div className="text-[19px] italic text-[#96A461] font-newfonts font-thin">
+            <div className="text-[19px] italic text-[#5E6A3B] font-newfonts font-thin">
               – {t("gettingMarried")} –
             </div>
             <div className="mt-6 text-[62px] leading-[1.05] text-[#7E8B52] font-webgency">{t("brideName")}</div>
-            <div className="my-2 text-[30px] text-[#96A461] font-webgency">&amp;</div>
+            <div className="my-2 text-[30px] text-[#5E6A3B] font-webgency">&amp;</div>
             <div className="text-[62px] leading-[1.05] text-[#7E8B52] font-webgency">{t("groomName")}</div>
             <div className="mt-8 flex items-center gap-4">
               <span className="h-px w-10 bg-[#7E8B52]/40" />
-              <span className="text-[13px] tracking-[0.28em] text-[#A39B84] font-newfonts font-thin">
+              <span className="text-[19px] tracking-[0.22em] text-[#4A432E] font-newfonts font-medium">
                 {t("weddingDateShort")}
               </span>
               <span className="h-px w-10 bg-[#7E8B52]/40" />
@@ -514,7 +514,7 @@ export const OpeningOverlay = () => {
           {/* Date */}
           <section className="px-8 py-20 text-center">
             <ScriptHeading>{t("ourMonth")}</ScriptHeading>
-            <div className="mt-2 text-[12px] tracking-[0.4em] text-[#A39B84] font-newfonts font-thin">2026</div>
+            <div className="mt-2 text-[12px] tracking-[0.4em] text-[#6B6249] font-newfonts font-thin">2026</div>
             <div className="mt-8 flex items-center justify-center gap-2">
               {[15, 16, 17, 18, 19].map((day) =>
                 day === 17 ? (
@@ -528,7 +528,7 @@ export const OpeningOverlay = () => {
                 ) : (
                   <div
                     key={day}
-                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#7E8B52]/20 text-[17px] text-[#A39B84] font-newfonts font-thin"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#7E8B52]/20 text-[17px] text-[#6B6249] font-newfonts font-thin"
                   >
                     {day}
                   </div>
@@ -548,7 +548,7 @@ export const OpeningOverlay = () => {
 
           {/* Countdown */}
           <section className="px-8 pb-24 text-center">
-            <p className="text-[19px] italic leading-[1.6] text-[#96A461] font-newfonts font-thin">{t("loveQuote")}</p>
+            <p className="text-[19px] italic leading-[1.6] text-[#5E6A3B] font-newfonts font-thin">{t("loveQuote")}</p>
             <div className="mt-3 text-[34px] text-[#7E8B52] font-webgency">{t("inDots")}</div>
             <div className="mt-8 flex items-center justify-center gap-2">
               {[
@@ -564,7 +564,7 @@ export const OpeningOverlay = () => {
                   <div className="text-[24px] leading-none text-[#7E8B52] font-newfonts font-thin">
                     {pad(unit.value)}
                   </div>
-                  <div className="mt-1.5 text-[9px] uppercase tracking-[0.2em] text-[#A39B84] font-newfonts font-thin">
+                  <div className="mt-1.5 text-[9px] uppercase tracking-[0.2em] text-[#6B6249] font-newfonts font-thin">
                     {unit.label}
                   </div>
                 </div>
@@ -652,7 +652,7 @@ export const OpeningOverlay = () => {
                       rsvpStatus.type === "error"
                         ? "text-red-700"
                         : rsvpStatus.type === "info"
-                          ? "text-[#A39B84]"
+                          ? "text-[#6B6249]"
                           : "text-green-800"
                     }`}
                   >
@@ -755,7 +755,7 @@ export const OpeningOverlay = () => {
                     messageStatus.type === "error"
                       ? "text-red-700"
                       : messageStatus.type === "info"
-                        ? "text-[#A39B84]"
+                        ? "text-[#6B6249]"
                         : "text-green-800"
                   }`}
                 >
@@ -776,7 +776,7 @@ export const OpeningOverlay = () => {
               <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(66,6,15,0.55)_0%,rgba(66,6,15,0.1)_60%)]" />
               <div className="absolute inset-x-0 bottom-6 text-center">
                 <div className="text-[34px] leading-none text-[#F7F1E3] font-webgency">{t("venueName")}</div>
-                <div className="mt-2 text-[12px] uppercase tracking-[0.3em] text-[#EDE3D1]/85 font-newfonts font-thin">
+                <div className="mt-2 text-[12px] uppercase tracking-[0.3em] text-[#F7F1E3] font-newfonts font-thin">
                   {t("venueAddress")}
                 </div>
               </div>
@@ -813,10 +813,10 @@ export const OpeningOverlay = () => {
 
         <footer className="relative z-[40] bg-[linear-gradient(180deg,#96A461_0%,#55603A_100%)] px-8 py-14 text-center">
           <div className="text-[40px] leading-none text-[#F7F1E3] font-webgency">{t("coupleNames")}</div>
-          <div className="mt-4 text-[12px] tracking-[0.35em] text-[#E4DCC4]/80 font-newfonts font-thin">
+          <div className="mt-4 text-[16px] tracking-[0.28em] text-[#F7F1E3] font-newfonts font-medium">
             {t("weddingDateShort")}
           </div>
-          <p className="mt-8 text-[14px] text-[#E4DCC4]/70 font-newfonts font-thin">
+          <p className="mt-8 text-[14px] text-[#F7F1E3] font-newfonts font-thin">
             {t("madeBy")}
             <a
               href="https://invitations.digitivaa.com/"
