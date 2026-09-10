@@ -1,13 +1,25 @@
 import "dotenv/config";
+import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Deployment writes credentials to .env.local; dotenv only reads .env on its own.
+dotenv.config({ path: ".env.local" });
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const distDir = path.resolve(__dirname, "..", "dist");
 
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 
-const PORT = process.env.PORT || 3001;
+// `pnpm start --port 3004` passes the flag through to this script.
+const portFlagIndex = process.argv.indexOf("--port");
+const portFromFlag = portFlagIndex !== -1 ? process.argv[portFlagIndex + 1] : undefined;
+const PORT = portFromFlag || process.env.PORT || 3001;
 
 function getTransporter() {
   const user = process.env.SMTP_USER;
@@ -126,6 +138,11 @@ app.post("/api/send-email", async (req, res) => {
   }
 });
 
+// Serve the built invitation from the same process, so one PM2 app on one port
+// covers both the site and /api behind a single nginx proxy_pass.
+app.use(express.static(distDir));
+app.get("*", (req, res) => res.sendFile(path.join(distDir, "index.html")));
+
 app.listen(PORT, () => {
-  console.log(`Email server listening on http://localhost:${PORT}`);
+  console.log(`Invitation running on http://localhost:${PORT}`);
 });
