@@ -572,6 +572,40 @@ export const OpeningOverlay = () => {
             </div>
           </section>
 
+          {/* Location */}
+          <section className="px-6 pb-24 text-center">
+            <SectionLabel>{t("locationLabel")}</SectionLabel>
+            <div className="mt-2">
+              <ScriptHeading>{t("weAwaitYou")}</ScriptHeading>
+            </div>
+            <div className="relative z-[40] mt-7 overflow-hidden rounded-2xl shadow-[0_20px_45px_-24px_rgba(107,15,31,0.8)]">
+              <img src="/location-map.jpg" alt="" className="h-[230px] w-full object-cover" />
+              <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(66,6,15,0.55)_0%,rgba(66,6,15,0.1)_60%)]" />
+              <div className="absolute inset-x-0 bottom-6 text-center">
+                <div className="text-[34px] leading-none text-[#F7F1E3] font-webgency">{t("venueName")}</div>
+                <div className="mt-2 text-[12px] uppercase tracking-[0.3em] text-[#F7F1E3] font-newfonts font-thin">
+                  {t("venueAddress")}
+                </div>
+              </div>
+            </div>
+            <a
+              href={MAP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              // In-app browsers (Instagram, Facebook, some WhatsApp views) silently swallow
+              // target="_blank"; fall back to navigating this view so the map still opens.
+              onClick={(event) => {
+                const opened = window.open(MAP_LINK, "_blank", "noopener,noreferrer");
+                if (!opened) window.location.href = MAP_LINK;
+                event.preventDefault();
+              }}
+              className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#7E8B52]/45 px-10 py-3.5 text-[15px] uppercase tracking-[0.22em] text-[#7E8B52] transition-colors hover:bg-[#7E8B52] hover:text-[#EDE3D1] font-newfonts font-thin"
+            >
+              <MapPin className="h-4 w-4" />
+              {t("openMap")}
+            </a>
+          </section>
+
           {/* RSVP */}
           <section className="px-8 pb-24 text-center">
             <SectionLabel>{t("rsvpLabel")}</SectionLabel>
@@ -763,40 +797,6 @@ export const OpeningOverlay = () => {
                 </p>
               )}
             </form>
-          </section>
-
-          {/* Location */}
-          <section className="px-6 pb-24 text-center">
-            <SectionLabel>{t("locationLabel")}</SectionLabel>
-            <div className="mt-2">
-              <ScriptHeading>{t("weAwaitYou")}</ScriptHeading>
-            </div>
-            <div className="relative z-[40] mt-7 overflow-hidden rounded-2xl shadow-[0_20px_45px_-24px_rgba(107,15,31,0.8)]">
-              <img src="/location-map.jpg" alt="" className="h-[230px] w-full object-cover" />
-              <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(66,6,15,0.55)_0%,rgba(66,6,15,0.1)_60%)]" />
-              <div className="absolute inset-x-0 bottom-6 text-center">
-                <div className="text-[34px] leading-none text-[#F7F1E3] font-webgency">{t("venueName")}</div>
-                <div className="mt-2 text-[12px] uppercase tracking-[0.3em] text-[#F7F1E3] font-newfonts font-thin">
-                  {t("venueAddress")}
-                </div>
-              </div>
-            </div>
-            <a
-              href={MAP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              // In-app browsers (Instagram, Facebook, some WhatsApp views) silently swallow
-              // target="_blank"; fall back to navigating this view so the map still opens.
-              onClick={(event) => {
-                const opened = window.open(MAP_LINK, "_blank", "noopener,noreferrer");
-                if (!opened) window.location.href = MAP_LINK;
-                event.preventDefault();
-              }}
-              className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#7E8B52]/45 px-10 py-3.5 text-[15px] uppercase tracking-[0.22em] text-[#7E8B52] transition-colors hover:bg-[#7E8B52] hover:text-[#EDE3D1] font-newfonts font-thin"
-            >
-              <MapPin className="h-4 w-4" />
-              {t("openMap")}
-            </a>
           </section>
 
           {/* Closing */}
