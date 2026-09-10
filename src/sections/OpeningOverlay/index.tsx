@@ -804,7 +804,7 @@ export const OpeningOverlay = () => {
             <img
               src="/couple-3.jpg"
               alt=""
-              className="relative z-[40] h-[330px] w-full rounded-2xl object-cover shadow-[0_20px_45px_-24px_rgba(107,15,31,0.8)]"
+              className="relative z-[40] h-[330px] w-full rounded-2xl object-cover object-[center_22%] shadow-[0_20px_45px_-24px_rgba(107,15,31,0.8)]"
             />
             <p className="mt-8 text-[26px] leading-[1.35] text-[#7E8B52] font-webgency">{t("closingLine")}</p>
             <Heart className="mx-auto mt-6 h-6 w-6 text-[#7E8B52]" />
